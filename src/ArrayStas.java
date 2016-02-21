@@ -27,47 +27,47 @@ public class ArrayStas {
 		quicksort(0, number - 1);
 	}
 	
-	/**The quicksort method takes the array of integers and sorts it using a pivot method
+	/**The quicksort method takes the array of integers and sorts it using a pivot method.
 	 * 
 	 * @param low	the lowest index
 	 * @param high	the highest index
 	 */
 	private void quicksort(int low, int high) {
-		int i = low, j = high;
+		int number1 = low, number2 = high;
 		// Get the pivot element from the middle of the list
 		int pivot = numbers[low + (high-low)/2];
 		// Divide into two lists
-		while (i <= j) {
+		while (number1 <= number2) {
 		// If the current value from the left list is smaller then the pivot
 		// element then get the next element from the left list
-			while (numbers[i] < pivot) {
-				i++;
+			while (numbers[number1] < pivot) {
+				number1++;
 			}
 		    // If the current value from the right list is larger then the pivot
 		    // element then get the next element from the right list
-		    while (numbers[j] > pivot) {
-		        j--;
+		    while (numbers[number2] > pivot) {
+		        number2--;
 		    }
 		    //If elements are out of order swap elements
-		    if (i <= j) {
-		    	swap(i, j);
-		        i++;
-		        j--;
+		    if (number1 <= number2) {
+		    	swap(number1, number2);
+		        number1++;
+		        number2--;
 		    }
 		 }
 		 // Recursively sort the numbers
-		 if (low < j){
-			 quicksort(low, j);
+		 if (low < number2){
+			 quicksort(low, number2);
 		 }
-		 if (i < high){
-		     quicksort(i, high);
+		 if (number1 < high){
+		     quicksort(number, high);
 		 }
 	}
 	
-	/**
+	/**The method is a simple swap method that exchanges the two values
 	 * 
-	 * @param i
-	 * @param j
+	 * @param number1	first number to swap
+	 * @param number2	second number to swap
 	 */
 	private void swap(int number1, int number2) {
 		int temp = numbers[number1];
@@ -75,6 +75,16 @@ public class ArrayStas {
 		numbers[number2] = temp;
 		}
 	
+	/**Short method called printStar uses recursion to print stars
+	 * 
+	 * @param count		number of stars to print
+	 */
+	private static void printStar(int count){
+		if (count > 0){
+			System.out.print("*");
+			printStar(count-1);
+		}
+	}
 	/** The Main method creates 300 random numbers in an array. The array is sorted and displayed. 
 	 * The number of each value appearing in one of the five categories is then displayed. 
 	 * 
@@ -95,10 +105,42 @@ public class ArrayStas {
 						|| index == 99 || index == 119 || index == 139 
 						|| index == 159 || index == 179 || index == 199
 						|| index == 219 || index == 239 || index == 259
-						|| index == 279 ){
+						|| index == 279 || index == 299){
 					System.out.println();
 				}
 		}
-		
+		int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
+		for (int index = 0; index <300; index++){
+			if (array[index] <= 20){
+				count1 += 1;
+			}
+			else if (array[index] <= 40){
+				count2 += 1;
+			}
+			else if (array[index] <= 60){
+				count3 += 1;
+			}
+			else if (array[index] <= 80){
+				count4 += 1;
+			}
+			else {
+				count5 += 1;
+			}
+		}
+		System.out.print(" 1 -  20: ");
+		printStar(count1);
+		System.out.println(" " + count1);
+		System.out.print("21 -  40: ");
+		printStar(count2);
+		System.out.println(" " + count2);
+		System.out.print("41 -  60: ");
+		printStar(count3);
+		System.out.println(" " + count3);
+		System.out.print("61 -  80: ");
+		printStar(count4);
+		System.out.println(" " + count4);
+		System.out.print("81 - 100: ");
+		printStar(count5);
+		System.out.println(" " + count5);
 	}
 }
