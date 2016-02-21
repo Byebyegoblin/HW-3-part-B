@@ -53,12 +53,17 @@ public class ArrayStas {
 		}
 	
 	public static void main(String[] args){
+		ArrayStas arrayMethods = new ArrayStas();
 		Random rand = new Random();
 		int[] array = new int[300];
 		for (int index = 0; index <300; index++){
-			int value = rand.nextInt(101);
+			int value = rand.nextInt(100) + 1;
 			array[index] = value;
 			System.out.println(array[index]);
+		}
+		arrayMethods.sort(array);
+		for (int index = 0; index < 300; index++){
+			System.out.print(array[index] + ", ");
 		}
 	}
 }
