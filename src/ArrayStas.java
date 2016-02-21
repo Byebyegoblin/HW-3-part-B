@@ -63,7 +63,15 @@ public class ArrayStas {
 		}
 		arrayMethods.sort(array);
 		for (int index = 0; index < 300; index++){
-			System.out.print(array[index] + ", ");
-		}
+
+				System.out.print(array[index] + "  ");
+				if (index == 20 || index == 40 || index == 60 || index == 80
+						|| index == 100 || index == 120 || index == 140 
+						|| index == 160 || index == 180 || index == 200
+						|| index == 220 || index == 240 || index == 260
+						|| index == 280 ){
+					System.out.println();
+				}
+		} 
 	}
 }
