@@ -1,8 +1,8 @@
 /** The class MemoryMatch constructs a game for the user to select 2 cards. If they match, they turn face up.
  * If the cards do not match, they remain face down.The user continues to select two cards until all the cards
- * are face up. The user than wins the game.
+ * are face up. The user then wins the game.
  * 
- * @author Sarah
+ * @author Sarah Alspaugh
  * @version 1
  */
 
@@ -113,7 +113,7 @@ public class MemoryMatch {
 	}
 
 	/** The main method creates a board. It continually loops asking the user to pick two cards until the 
-	 * game is over. 
+	 * game is over. Print numerous lines between choices to remove board from the screen.
 	 * 
 	 */
 	public static void main(String[] args){
