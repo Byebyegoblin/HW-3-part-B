@@ -85,35 +85,8 @@ public class ArrayStas {
 			printStar(count-1);
 		}
 	}
-	/** The Main method creates 300 random numbers in an array. The array is sorted and displayed. 
-	 * The number of each value appearing in one of the five categories is then displayed. 
-	 * 
-	 */
-	public static void main(String[] args){
-		//Create an object of ArrayStas class
-		ArrayStas arrayMethods = new ArrayStas();
-		//Create an object of Random class
-		Random rand = new Random();
-		//Create an array of integers and fill with random numbers from 1-100
-		int[] array = new int[300];
-		for (int index = 0; index <300; index++){
-			int value = rand.nextInt(100) + 1;
-			array[index] = value;
-		}
-		//Sort the array
-		arrayMethods.sort(array);
-		
-		//Print 20 numbers of the array on each line
-		for (int index = 0; index < 300; index++){
-				System.out.print(array[index] + "   ");
-				if (index == 19 || index == 39 || index == 59 || index == 79
-						|| index == 99 || index == 119 || index == 139 
-						|| index == 159 || index == 179 || index == 199
-						|| index == 219 || index == 239 || index == 259
-						|| index == 279 || index == 299){
-					System.out.println();
-				}
-		}
+	
+	private void printBarGraph(int[] array){
 		//Count the numbers in each of the 5 categories (1-20, 21-40, 41-60, 61-80, and 81-100)
 		int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
 		for (int index = 0; index <300; index++){
@@ -150,5 +123,38 @@ public class ArrayStas {
 		System.out.print("81 - 100: ");
 		printStar(count5);
 		System.out.println(" " + count5);
+	}
+	
+	
+	/** The Main method creates 300 random numbers in an array. The array is sorted and displayed. 
+	 * The number of each value appearing in one of the five categories is then displayed. 
+	 * 
+	 */
+	public static void main(String[] args){
+		//Create an object of ArrayStas class
+		ArrayStas arrayMethods = new ArrayStas();
+		//Create an object of Random class
+		Random rand = new Random();
+		//Create an array of integers and fill with random numbers from 1-100
+		int[] array = new int[300];
+		for (int index = 0; index <300; index++){
+			int value = rand.nextInt(100) + 1;
+			array[index] = value;
+		}
+		//Sort the array
+		arrayMethods.sort(array);
+		//Print 20 numbers of the array on each line
+		for (int index = 0; index < 300; index++){
+				System.out.print(array[index] + "   ");
+				if (index == 19 || index == 39 || index == 59 || index == 79
+						|| index == 99 || index == 119 || index == 139 
+						|| index == 159 || index == 179 || index == 199
+						|| index == 219 || index == 239 || index == 259
+						|| index == 279 || index == 299){
+					System.out.println();
+				}
+		}
+		//Print the Bar Graph
+		arrayMethods.printBarGraph(array);
 	}
 }
