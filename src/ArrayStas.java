@@ -145,7 +145,7 @@ public class ArrayStas {
 		arrayMethods.sort(array);
 		//Print 20 numbers of the array on each line
 		for (int index = 0; index < 300; index++){
-				System.out.print(array[index] + "   ");
+			System.out.printf("%5d", array[index]);
 				if (index == 19 || index == 39 || index == 59 || index == 79
 						|| index == 99 || index == 119 || index == 139 
 						|| index == 159 || index == 179 || index == 199
@@ -153,7 +153,8 @@ public class ArrayStas {
 						|| index == 279 || index == 299){
 					System.out.println();
 				}
-		}
+		}		
+		System.out.println("----------------------------------");
 		//Print the Bar Graph
 		arrayMethods.printBarGraph(array);
 	}
