@@ -60,7 +60,7 @@ public class ArrayStas {
 			 quicksort(low, number2);
 		 }
 		 if (number1 < high){
-		     quicksort(number, high);
+		     quicksort(number1, high);
 		 }
 	}
 	
@@ -90,15 +90,20 @@ public class ArrayStas {
 	 * 
 	 */
 	public static void main(String[] args){
+		//Create an object of ArrayStas class
 		ArrayStas arrayMethods = new ArrayStas();
+		//Create an object of Random class
 		Random rand = new Random();
+		//Create an array of integers and fill with random numbers from 1-100
 		int[] array = new int[300];
 		for (int index = 0; index <300; index++){
 			int value = rand.nextInt(100) + 1;
 			array[index] = value;
-			System.out.println(array[index]);
 		}
+		//Sort the array
 		arrayMethods.sort(array);
+		
+		//Print 20 numbers of the array on each line
 		for (int index = 0; index < 300; index++){
 				System.out.print(array[index] + "   ");
 				if (index == 19 || index == 39 || index == 59 || index == 79
@@ -109,6 +114,7 @@ public class ArrayStas {
 					System.out.println();
 				}
 		}
+		//Count the numbers in each of the 5 categories (1-20, 21-40, 41-60, 61-80, and 81-100)
 		int count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
 		for (int index = 0; index <300; index++){
 			if (array[index] <= 20){
@@ -127,6 +133,8 @@ public class ArrayStas {
 				count5 += 1;
 			}
 		}
+		
+		//Print a bar graph to display the numbers
 		System.out.print(" 1 -  20: ");
 		printStar(count1);
 		System.out.println(" " + count1);
