@@ -34,7 +34,7 @@ public class MemoryMatch {
 	/** This method returns whether or not the card is revealed or not
 	 * 
 	 * @return		return if card is revealed or not
-	 */
+	 */ 
 	public boolean isRevealed(){
 		return cardReveal;
 	}
