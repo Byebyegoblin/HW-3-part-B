@@ -28,7 +28,7 @@ public class ArrayStas {
 	}
 	
 	/**The quicksort method takes the array of integers and sorts it using a pivot method.
-	 * 
+	 *  
 	 * @param low	the lowest index
 	 * @param high	the highest index
 	 */
